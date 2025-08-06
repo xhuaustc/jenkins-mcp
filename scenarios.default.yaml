@@ -1,0 +1,21 @@
+# Jenkins MCP default scenario configuration
+# These are pre-configured DevOps scenarios
+
+scenarios:
+  "Sync User Permissions":
+    description: "User permission sync scenario"
+    server: "shlab"
+    job_path: "maglev/tool/permission-replicate/"
+    prompt_template: "Execute user permission sync task. Job path: {job_path}. Please confirm which users' permissions to sync?"
+
+  "Deploy Application":
+    description: "Application deployment scenario, supports Deploy Action: diff/sync/build"
+    server: "maglev-sre"
+    job_path: "release/deploy/"
+    prompt_template: "Execute application deployment task. Job path: {job_path}. Please confirm the app name, version, and environment to deploy?"
+
+  "Sync Image to mldc":
+    description: "Sync image to mldc scenario"
+    server: "shlab"
+    job_path: "mldc-prod/sync-container-image-to-docker-af"
+    prompt_template: "Execute image sync task. Please provide the image address to sync?"

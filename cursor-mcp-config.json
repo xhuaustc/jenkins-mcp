@@ -1,0 +1,25 @@
+{
+    "mcpServers": {
+        "jenkins": {
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-i",
+                "-v",
+                "/path/to/your/config.yaml:/app/config.yaml",
+                "-v",
+                "/path/to/your/scenarios.yaml:/app/scenarios.yaml",
+                "-e",
+                "PROD_BLSM_JENKINS_TOKEN=${PROD_BLSM_JENKINS_TOKEN}",
+                "-e",
+                "SHLAB_JENKINS_TOKEN=${SHLAB_JENKINS_TOKEN}",
+                "docker.io/mpan083/jenkins-mcp"
+            ],
+            "env": {
+                "PROD_BLSM_JENKINS_TOKEN": "your-production-jenkins-token",
+                "SHLAB_JENKINS_TOKEN": "your-shlab-jenkins-token"
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+# Example of user-defined scenario configuration
+# Copy this file as scenarios.yaml and modify as needed
+
+scenarios:
+  # Example of a custom scenario
+  "Database Backup":
+    description: "Execute database backup task"
+    server: "production"
+    job_path: "backup/database/"
+    prompt_template: "Execute database backup task. Please select the database and backup type?"
